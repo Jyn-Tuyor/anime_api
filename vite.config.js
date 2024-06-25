@@ -4,6 +4,7 @@ import tailwindcss from 'tailwindcss'
 
 
 export default defineConfig({
+  base: "/React/",
   plugins: [react()],
   css: {
     postcss: {
