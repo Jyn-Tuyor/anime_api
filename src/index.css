@@ -22,8 +22,8 @@ form {
 .menu {
 	width: 40px;
 	height: 30px;
-	display: none;
 	position: relative;
+	display:none;
 }
 .bar {
 	background-color: white;
@@ -43,6 +43,7 @@ form {
 	overflow: hidden;
 	z-index: 1;
 	padding-top: 12px;
+	left:-99999px;
 }
 .bar2{
 	transition: 0s !important;
@@ -51,9 +52,6 @@ form {
 	button {
 		display: none;
 	}	
-	.input-container {
-		left: -100%;
-	}
 	.input-container.active {
 		left: 0;
 		text-align: center;
