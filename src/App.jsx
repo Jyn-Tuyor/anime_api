@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '/src/components/Header.jsx';
 import Content from '/src/components/Content.jsx';
 import '/src/index.css';
@@ -10,7 +10,7 @@ export default function App() {
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
   const [menu, setMenu] = useState(false)
-  const menuRef = useRef(null)
+  
   const url = `https://api.jikan.moe/v4/anime?q=${search}&sfw`;
 
   function handleSubmit(e) {
@@ -39,20 +39,6 @@ export default function App() {
       setLoadingState(false)
     });
   }
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenu(false)
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [menu])
-
   const handleMenu = () => {
     setMenu(!menu)
   }
@@ -64,7 +50,7 @@ export default function App() {
     setSearch={setSearch}  
     handleMenu={handleMenu} 
     menu={menu}
-    menuRef={menuRef}
+    
     />
     {loadingState && <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
     <div className="absolute bg-black opacity-50 w-full h-full"></div>
