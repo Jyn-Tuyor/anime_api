@@ -1,7 +1,7 @@
 import React from 'react'
 import '/src/index.css'
 
-function Header({handleSubmit, search, setSearch, handleMenu, menu, menuRef}) {
+function Header({handleSubmit, search, setSearch, handleMenu, menu) {
 	return (
 	<form onSubmit={handleSubmit}
 		className="container-header w-full text-white text-2xl font-bold bg-blue-700 px-4 py-2 mb-5 rounded">
@@ -35,7 +35,6 @@ function Header({handleSubmit, search, setSearch, handleMenu, menu, menuRef}) {
     	type='submit'>Submit</button>
     	<div 
     	onClick={handleMenu}
-    	ref={menuRef}
     	className={`menu ${menu ? 'active' : ''}`}>
     		<div className={`bar bar1 ${menu ? 'active' : ''}`}></div>
     		<div className={`bar bar2 ${menu ? 'active' : ''}`}></div>
