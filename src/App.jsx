@@ -37,7 +37,6 @@ export default function App() {
         setLoadingState(false)
       });
   }
-  console.log(data ? data : null)
   return (
     <>
       <Header handleSubmit={handleSubmit} search={search} setSearch={setSearch}/>
