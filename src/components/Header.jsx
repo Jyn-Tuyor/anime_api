@@ -5,7 +5,7 @@ function Header({handleSubmit, search, setSearch}) {
 	return (
 	<form onSubmit={handleSubmit}
 		className="container-header w-full text-white text-2xl font-bold bg-blue-700 px-4 py-2 mb-5 rounded">
-    	<h1><a href='/'>Search Anime</a></h1>
+    	<h1><a href='/Anime-Search-App/'>Search Anime</a></h1>
     	<input
     		autoFocus
     		className='rounded'

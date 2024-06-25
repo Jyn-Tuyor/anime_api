@@ -4,8 +4,8 @@ import tailwindcss from 'tailwindcss'
 
 
 export default defineConfig({
-  base: "/React/",
   plugins: [react()],
+  base: "/Anime-Search-App/",
   css: {
     postcss: {
       plugins: [tailwindcss()],
