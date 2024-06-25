@@ -1,0 +1,19 @@
+
+body {
+	background-color: rgba(0, 0, 0, .9);
+}
+img {
+	transition: .5s ease;
+}
+img:hover {
+	transform: scale(1.1);
+}
+.container-header {
+	display: flex;
+	gap: 40px;
+}
+form {
+	width: 100%;
+	align-items: center;
+	z-index: 1;
+}
