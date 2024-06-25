@@ -29,7 +29,7 @@ export default function Content({image, data}) {
                   width: '194px',
                   borderRadius: '4px',
                 }}
-                src={import.meta.env.BASE_URL + src}
+                src={src}
                 alt={`Anime ${index + 1}`}
               />
               <hr style={{height: '1px', marginTop: '1rem', width: '100%'}} />
