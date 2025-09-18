@@ -1,13 +1,12 @@
-# React + Vite
+# 🚀 Anime Searching Web App!!!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🖥️ Features
+- ✅ Search any anime!
+- ✅ View their stats!
 
-Currently, two official plugins are available:
+# ⚙️ Tech Stack
+- Front end: React.js
+- API: https://jikan.moe/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# Anime-Search-App" 
-"# Anime-Search-App" 
-"# Anime-Search-App" 
-"# Anime-Search-App" 
-"# Anime-Search-App" 
+#⚡Description
+The purpose of this project is for solely on learning React.js!
