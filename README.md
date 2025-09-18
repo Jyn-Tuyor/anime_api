@@ -6,7 +6,7 @@
 
 # ⚙️ Tech Stack
 - Front end: React.js
-- API: https://jikan.moe/
+- API: https://jikan.moe
 
-#⚡Description
+# ⚡Description
 The purpose of this project is for solely on learning React.js!
