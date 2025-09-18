@@ -1,3 +1,5 @@
+import animeImg from '../assets/images/anime.jpg'
+
 export default function Content({image, data}) {
 
   return <>
@@ -69,12 +71,14 @@ export default function Content({image, data}) {
           ))}
         </div>
       ) : (
-        <h1 style={{
-            color:'white',
-            textAlign: 'center',
-            fontSize: '1.2rem',
-        }}> Search anime... </h1>
-      )}
+          <div className="flex justify-center mt-4">
+            <div className=" flex flex-col items-center p-4 bg-gray-800 rounded-md shadow-md border border-2 border-gray-500">
+              <h1 className='text-2xl  text-white'>Search for any Anime!</h1>
+              <img src={animeImg} alt="" className='w-[200px] rounded' />
+            </div>
+          </div>
+
+)}
   </>
 
 }

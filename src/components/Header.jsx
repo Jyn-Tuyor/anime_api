@@ -5,7 +5,7 @@ function Header({ handleSubmit, search, setSearch, handleMenu, menu }) {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="container-header w-full text-white  bg-blue-500 p-3  rounded-sm"
+			className="container-header w-full text-white  bg-gray-800 p-3  rounded-sm"
 		>
 			<h1 class='text-xl'>
 				<a href='/Anime-Search-App/'>HEYYYYY!!</a>
@@ -22,7 +22,7 @@ function Header({ handleSubmit, search, setSearch, handleMenu, menu }) {
 				/>
 
 				<button
-					className='bg-blue-600 p-2 rounded-sm hover:shadow-sm'
+					className='bg-gray-900 p-2 rounded-sm hover:shadow-sm'
 					type='submit'
 					>Submit</button>
 				<div
