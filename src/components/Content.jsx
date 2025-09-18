@@ -68,11 +68,13 @@ export default function Content({image, data}) {
             </div>
           ))}
         </div>
-      ) : (<h1 style={{
-          color:'white',
-          textAlign: 'center',
-          fontSize: '1.2rem',
-      }}> Search anime... </h1>)}
+      ) : (
+        <h1 style={{
+            color:'white',
+            textAlign: 'center',
+            fontSize: '1.2rem',
+        }}> Search anime... </h1>
+      )}
   </>
 
 }
