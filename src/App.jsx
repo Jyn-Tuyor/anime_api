@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '/src/components/Header.jsx';
-import Content from '/src/components/Content.jsx';
-import '/src/index.css';
+import Content from '/src/pages/Content.jsx';
+import '/src/App.css';
 
 export default function App() {
   const [image, setImage] = useState(null);

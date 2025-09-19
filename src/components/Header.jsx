@@ -1,30 +1,32 @@
 import React from 'react'
 import '/src/index.css'
+import searchIcon from "../assets/images/search.png"
 
 function Header({ handleSubmit, search, setSearch, handleMenu, menu }) {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="container-header w-full text-white  bg-gray-800 p-3  rounded-sm"
+			className="flex items-center justify-between container-header w-full text-white  bg-[#282828] p-3 shadow-sm"
 		>
-			<h1 class='text-xl'>
-				<a href='/Anime-Search-App/'>HEYYYYY!!</a>
-			</h1>
-			<div>
+			{/* <a href='/'>HEYYYYY!!</a> */}
+			<div className='flex items-center'>
 
 				<input
 					autoFocus
 					placeholder='Search...'
-					className='outline-none p-2 text-black mr-2'
+					className='outline-none p-2 text-black mr-2 text-sm'
 					type='text'
 					value={search}
 					onChange={e => setSearch(e.target.value)}
 				/>
 
 				<button
-					className='bg-gray-900 p-2 rounded-sm hover:shadow-sm'
+					className='bg-[#1d1d1d] p-2 text-sm rounded-lg hover:shadow-sm'
 					type='submit'
-					>Submit</button>
+					>
+						<img className='w-[20px]' src={searchIcon} alt="" />
+					</button>
+
 				<div
 					onClick={handleMenu}
 					className={`menu ${menu ? 'active' : ''}`}>
