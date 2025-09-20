@@ -1,8 +1,7 @@
-import RandomQoute from "../components/RandomQoute.jsx";
-import Card from "../components/Card.jsx";
+import RandomQoute from "../components/RandomQoute.js";
+import Card from "../components/Card.js";
 
 export default function Content({ image, data }) {
-  console.log(data)
   return (
     <>
       {data ? (
@@ -13,7 +12,12 @@ export default function Content({ image, data }) {
           <hr />
           <div className='gap-1.5 mt-2  flex flex-col text-sm'>
             {image.map((src, index) => (
-              <Card src={src}  index={index} data={data} />
+              <Card 
+                src={src}  
+                index={index}
+                data={data}
+                key={index}
+              />
             ))}
         </div>
         </div>

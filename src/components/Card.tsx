@@ -1,10 +1,34 @@
 import React from "react";
 
-export default function Card({ src, data, index }) {
+
+interface Anime {
+  mal_id: number;
+  title_english?: string;
+  title: string;
+  url: string;
+  type: string;
+  episodes?: number;
+  score: number;
+  members: number;
+}
+
+interface AnimeData {
+  data: Anime[]
+}
+
+interface AnimeProps {
+  src: string;
+  data: AnimeData;
+  index: number;
+}
+
+
+const Card: React.FC<AnimeProps> = ({ src, data, index }) => {
+  const anime = data.data[index];
+  console.log(anime)
   return (
     <div
       className="flex flex-row gap-4  p-2 border hover:bg-gray-50 "
-      key={data.data[index].mal_id}
     >
       <img
         src={src}
@@ -16,30 +40,32 @@ export default function Card({ src, data, index }) {
 
       <div className="flex flex-col mt-2 text-black">
         <p className="text-blue-800 font-bold">
-          {data.data[index].title_english || data.data[index].title}
+          {anime.title_english || anime.title}
 
-            <a href={data.data[index].url}>
+            <a href={anime.url}>
               <small className="text-white bg-slate-800 rounded-sm px-2 py-1.5 ml-2">Open</small>
             </a>
         </p>
         <strong>
           <small className="text-blue-800 font-bold">
-            {data.data[index].type}{" "}
+            {anime.type}{" "}
             <span>
               {data.data[index].episodes && (
-                <>({data.data[index].episodes} eps)</>
+                <>({anime.episodes} eps)</>
               )}
             </span>
           </small>
         </strong>
         <p className="text-gray-500">
-          <small>Scored {data.data[index].score}</small>
+          <small>Scored {anime.score}</small>
         </p>
 
         <p className="text-gray-500">
-          <small>{data.data[index].members} members</small>
+          <small>{anime.members} members</small>
         </p>
       </div>
     </div>
   );
 }
+
+export default Card;
