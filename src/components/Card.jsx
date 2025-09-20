@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Card({ image, data }) {
     return (
-        <div className='justify-center gap-1.5 p-12 flex flex-col mt-4'>
+        <div className='justify-center gap-1.5 p-8 flex flex-col'>
             {image.map((src, index) => (
                 <div
                     className='bg-[#282828] flex flex-row gap-4  p-2 rounded-sm hover:shadow-md cursor-pointer'
@@ -11,9 +11,9 @@ export default function Card({ image, data }) {
                         src={src}
                         alt={`Anime ${index + 1}`}
                     />
-                    {/* <hr style={{ height: '1px', marginTop: '1rem', width: '100%' }} /> */}
+                    {/* <hr style={{ height: '1px', marginTop: '1rem'x  , width: '100%' }} /> */}
 
-                    <div className='flex flex-col mt-2'>
+                    <div className='flex flex-col mt-2 text-white'>
                         <p>{data.data[index].title_english}</p>
                         <strong>Rating: <span
                             style={{
