@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "/src/components/Header";
 import Content from "/src/pages/Content";
 import RandomQoute from "/src/components/RandomQoute";
+import Footer from "./components/Footer";
+import { PuffLoader } from "react-spinners";
 import "/src/App.css";
 
 // interface DataType {
@@ -11,7 +13,7 @@ import "/src/App.css";
 export default function App() {
   const [images, setImages] = useState<string[] | null>(null);
   const [data, setData] = useState<any | null>(null);
-  const [loadingState, setLoadingState] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const [menu, setMenu] = useState<boolean>(false);
 
@@ -20,7 +22,7 @@ export default function App() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSearch("");
-    setLoadingState(true);
+    setLoading(true);
     fetch(url)
       .then((res: any) => {
         if (!res.ok) {
@@ -33,19 +35,20 @@ export default function App() {
           const imgUrl = data.data.map((img: any) => img.images.jpg.image_url);
           setData(data);
           setImages(imgUrl);
-          setLoadingState(false);
+          setLoading(false);
         } else {
           throw new Error("No data available");
         }
       })
       .catch((err: Error) => {
         // setError("404 Error: Failed fetching... :<");
-        setLoadingState(false);
+        setLoading(false);
       });
   }
   const handleMenu = () => {
     setMenu(!menu);
   };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="w-[768px] border shadow-sm">
@@ -56,21 +59,22 @@ export default function App() {
           handleMenu={handleMenu}
           menu={menu}
         />
-        
+
         <RandomQoute />
 
-        {loadingState && (
+        {loading && (
           <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-            <div className="absolute bg-black opacity-50 w-full h-full"></div>
-            <div className="modal-container z-50 mx-auto rounded-lg overflow-hidden bg-white shadow-lg max-w-lg">
+            <div className="absolute bg-black opacity-80 w-full h-full"></div>
+            <div className="modal-container z-50 mx-auto">
               <div className="modal-content p-4">
-                <h2 className="mb-2">Loading...</h2>
+                <PuffLoader size={75} color="white" />
               </div>
             </div>
           </div>
         )}
         <Content images={images} data={data} search={search} />
       </div>
+      <Footer/>
     </div>
   );
 }
