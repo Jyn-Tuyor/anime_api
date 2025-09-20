@@ -13,11 +13,11 @@ function Header({ handleSubmit, search, setSearch, handleMenu, menu }) {
         className="flex flex-row items-center justify-center w-full text-white  bg-[#282828] p-3 shadow-sm"
       >
         {/* <a href='/'>HEYYYYY!!</a> */}
-        <div className="flex items-center">
+        <div className="flex items-center w-full">
           <input
             autoFocus
             placeholder="Search..."
-            className="outline-none p-2 text-black mr-2 text-sm rounded-md"
+            className="outline-none p-2 text-black mr-2 rounded-md w-full focus:ring duration-100"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

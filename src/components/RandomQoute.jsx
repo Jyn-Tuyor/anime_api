@@ -33,8 +33,8 @@ export default function DescHeader() {
   }, []);
 
   return (
-    <div className="flex justify-center  sm:p-4">
-      <div className=" flex flex-col p-2 bg-[#282828] shadow-md rounded-md w-full">
+    <div className="flex justify-center  sm:p-2">
+      <div className=" flex flex-col p-2 bg-[#282828] shadow-md rounded-sm w-full">
         <h1 className="text-md text-[#ebdbb2]">
           Heres a random quote for you lol!
         </h1>

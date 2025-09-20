@@ -5,12 +5,22 @@ export default function Content({ image, data }) {
   return (
     <>
       {data ? (
-        <>
-          {data.pagination.items.total}
-          <Card image={image} data={data} />
-        </>
+        <div className="px-4">
+          <small className="font-bold">
+            Total results: {data.pagination.items.total}
+          </small>
+          <hr />
+          <div className='gap-1.5  flex flex-col text-sm'>
+            {image.map((src, index) => (
+              <Card src={src}  index={index} data={data} />
+            ))}
+        </div>
+        </div>
+        
       ) : (
-        <RandomQoute />
+        <>
+          {/* TODO: put something here... */}
+        </>
       )}
     </>
   );

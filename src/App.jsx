@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "/src/components/Header.jsx";
 import Content from "/src/pages/Content.jsx";
+import RandomQoute from "/src/components/RandomQoute.jsx"
 import "/src/App.css";
 
 export default function App() {
@@ -54,12 +55,14 @@ export default function App() {
         handleMenu={handleMenu}
         menu={menu}
       />
+        <RandomQoute />
+
       {loadingState && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
           <div className="absolute bg-black opacity-50 w-full h-full"></div>
           <div className="modal-container z-50 mx-auto rounded-lg overflow-hidden bg-white shadow-lg max-w-lg">
             <div className="modal-content p-4">
-              <h2 className="text-lg font-bold mb-2">Fetching</h2>
+              <h2 className="mb-2">Loading...</h2>
             </div>
           </div>
         </div>
