@@ -1,10 +1,16 @@
 import React from "react";
 import animeImg from "../assets/images/anime.jpg";
 
-export default function DescHeader() {
-  const randomQouteEndpoint = "https://quotes.domiadi.com/api";
-  const [quote, setQuote] = React.useState();
-  const [isLoading, setIsLoading] = React.useState(true);
+interface Quote {
+  quote: string;
+  from?: string;
+}
+
+const RandomQuote: React.FC = () =>  {
+  const randomQouteEndpoint: string = "https://quotes.domiadi.com/api";
+  const [quote, setQuote] = React.useState<Quote>();
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
+
   // const fetch = async () => {
   //     const response = await fetch(randomQouteEndpoint);
   //     const data = await response.json();
@@ -15,16 +21,16 @@ export default function DescHeader() {
   React.useEffect(() => {
     // fetch()
     fetch(`${randomQouteEndpoint}`)
-      .then((response) => {
+      .then((response: any) => {
         if (response.ok) {
           return response.json();
         }
       })
-      .then((data) => {
+      .then((data: Quote) => {
         setQuote(data);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch((err: Error) => {
         setIsLoading(false);
         setQuote({ quote: "Something went wrong." });
         alert("Something went wrong.");
@@ -62,3 +68,5 @@ export default function DescHeader() {
     </div>
   );
 }
+
+export default RandomQuote;

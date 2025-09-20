@@ -3,7 +3,7 @@ import "/src/index.css";
 import searchIcon from "../assets/images/search.png";
 
 interface Props {
-  handleSubmit: () => void;
+  handleSubmit: () => void; 
   search: string;
   setSearch: () => void;
 

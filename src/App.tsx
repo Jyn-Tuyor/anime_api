@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from "/src/components/Header.jsx";
-import Content from "/src/pages/Content.jsx";
-import RandomQoute from "/src/components/RandomQoute.jsx";
+import Header from "/src/components/Header";
+import Content from "/src/pages/Content";
+import RandomQoute from "/src/components/RandomQoute";
 import "/src/App.css";
 
 // interface DataType {
@@ -9,7 +9,7 @@ import "/src/App.css";
 // }
 
 export default function App() {
-  const [image, setImage] = useState<HTMLImageElement | null>(null);
+  const [images, setImages] = useState<string[] | null>(null);
   const [data, setData] = useState<any | null>(null);
   const [loadingState, setLoadingState] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
@@ -32,7 +32,7 @@ export default function App() {
         if (data && data.data) {
           const imgUrl = data.data.map((img: any) => img.images.jpg.image_url);
           setData(data);
-          setImage(imgUrl);
+          setImages(imgUrl);
           setLoadingState(false);
         } else {
           throw new Error("No data available");
@@ -56,6 +56,7 @@ export default function App() {
           handleMenu={handleMenu}
           menu={menu}
         />
+        
         <RandomQoute />
 
         {loadingState && (
@@ -68,7 +69,7 @@ export default function App() {
             </div>
           </div>
         )}
-        <Content image={image} data={data} />
+        <Content images={images} data={data} search={search} />
       </div>
     </div>
   );
