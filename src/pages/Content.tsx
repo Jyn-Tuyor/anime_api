@@ -9,10 +9,10 @@ interface DataType {
   images: Image[];
   data: any;
   search: string;
+  noResult: boolean;
 }
 
-const Content: React.FC<DataType> = ({ images, data, search }) => {
-  console.log(search)
+const Content: React.FC<DataType> = ({ images, data, search, noResult }) => {
   return (
     <>
       {data && data.pagination?.items.total > 0 ? (
@@ -28,7 +28,7 @@ const Content: React.FC<DataType> = ({ images, data, search }) => {
               ))}
           </div>
         </div>
-      ) : ( search ?
+      ) : ( noResult ?
         <>
           <div className="p-4 border m-2 rounded-sm shadow-sm text-center">
             <small className="font-bold">

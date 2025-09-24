@@ -25,7 +25,6 @@ interface AnimeProps {
 
 const Card: React.FC<AnimeProps> = ({ src, data, index }) => {
   const anime = data.data[index];
-  console.log(anime)
   return (
     <div
       className="flex flex-row gap-4  p-2 border hover:bg-gray-50 "

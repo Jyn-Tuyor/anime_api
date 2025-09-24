@@ -16,7 +16,7 @@ export default function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const [menu, setMenu] = useState<boolean>(false);
-
+  const [noResult, setNoResult] = useState<boolean>(false)
   const url: string = `https://api.jikan.moe/v4/anime?q=${search}&sfw`;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -31,12 +31,14 @@ export default function App() {
         return res.json();
       })
       .then((data) => {
-        if (data && data.data) {
+        console.log(data)
+        if (data && data.data && data.data.length != 0) {
           const imgUrl = data.data.map((img: any) => img.images.jpg.image_url);
           setData(data);
           setImages(imgUrl);
           setLoading(false);
         } else {
+          setNoResult(true);
           throw new Error("No data available");
         }
       })
@@ -49,9 +51,9 @@ export default function App() {
     setMenu(!menu);
   };
 
-  return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="w-[768px] border shadow-sm">
+  return (<>
+    <div className="flex flex-col items-center bg-[#fbf1c7] min-h-[100vh]">
+      <div className="w-[768px]  shadow-md bg-white">
         <Header
           handleSubmit={handleSubmit}
           search={search}
@@ -72,9 +74,10 @@ export default function App() {
             </div>
           </div>
         )}
-        <Content images={images} data={data} search={search} />
+        <Content images={images} data={data} search={search} noResult={noResult}/>
       </div>
-      <Footer/>
     </div>
+    <Footer />
+  </>
   );
 }
