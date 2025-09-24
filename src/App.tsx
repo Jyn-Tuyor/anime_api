@@ -53,7 +53,7 @@ export default function App() {
 
   return (<>
     <div className="flex flex-col items-center bg-[#fbf1c7] min-h-[100vh]">
-      <div className="w-[768px]  shadow-md bg-white">
+      <div className="p-2 md:w-[768px]  shadow-md bg-white">
         <Header
           handleSubmit={handleSubmit}
           search={search}
